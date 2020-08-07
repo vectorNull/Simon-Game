@@ -1,0 +1,19 @@
+- Player presses start
+
+- Initalize state variables
+
+- RandomNumber function chooses a pad number (Green=1, Red=2, Yellow,=3 or Blue=4) and update state by storing choice in array
+
+- Pad assoicated with number lights up and makes assoicated sound
+
+- Player presses the pad that was chosen randomly and update state by storing playerChoice in array.
+
+- If PlayersChoice array === computerChoiceArray then computer chooses next pad randomly, lights up pad, makes sound and update state by adds choice to existing randomChoice array updating Score state variable  by 1. App waits for user response.
+
+-Player presses the corresponding pads, corresponding colors light up and sound is made; state is updated by adding to playerChoice array
+
+- If PlayerChoice array === computer ChoiceArray ....
+
+- If PlayerChoice array != computer ChoiceArray, display msg about user losing and about option to reset and play again.
+
+-If reset is clicked, reinitalize all app state variables.
