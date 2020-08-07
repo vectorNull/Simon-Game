@@ -21,7 +21,7 @@ main {
     justify-content: space-evenly;
 }
 
-.start {
+.startBtn {
     display: flex;
     margin-right: 50px;
 }
@@ -34,7 +34,7 @@ main {
 }
 
 .outerCircle {
-    display: grid;
+    display: flexbox;
     background-color: chartreuse;
     width: 700px;
     height: 700px;
@@ -47,16 +47,26 @@ main {
     width: 50%;
     height: 25em;
     border-radius: 50%;
+    background-color: blue;
 }
 
 .green {
     width: 50%;
+    height: 25em;
+    border-radius: 50%;
+    background-color: green;
 }
 
 .yellow {
-
+    background-color: yellow;
+    width: 50%;
+    height: 25em;
+    border-radius: 50%;
 }
 
 .red {
-
+    background-color: red;
+    width: 50%;
+    height: 25em;
+    border-radius: 50%;
 }
