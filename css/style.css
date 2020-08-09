@@ -38,7 +38,7 @@ main {
     justify-content: center;
 }
 
-.outerCircle {
+.padElements {
     position: relative;
     top: 170px;
     width: 640px;
