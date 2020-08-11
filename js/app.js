@@ -19,7 +19,7 @@ document.querySelector('.yellow')   .addEventListener('click', yellowClicked);
 document.querySelector('.red')      .addEventListener('click', redClicked);
 
 /*----- event listeners -----*/
-document.querySelector('#startBtn') .addEventListener('click', startBtnClicked);
+document.querySelector('#startBtn') .addEventListener('click', init);
 document.querySelector('#resetBtn') .addEventListener('click', resetBtnClicked);
 
 /*----- functions -----*/
@@ -27,20 +27,15 @@ document.querySelector('#resetBtn') .addEventListener('click', resetBtnClicked);
 function init() {
     gameOver = false;
     score = 0;
-    startBtnClicked();
     render();
 }
 
 function render() {
-    init();
-    DisplayCompSequence();
-    compareSequence();
-}
-
-function startBtnClicked (e) {
     getComputerSequence();
     displayCompSequence();
+    // compareSequence();
 }
+
 
 function resetBtnClicked (e) {
     init();
@@ -52,32 +47,32 @@ function getComputerSequence () {
 }
 
 function displayCompSequence () {
-    let i = computerSeq.length - 1;
-    
-    id = computerSeq[i];
-    color = $('#' + id).attr('class').split(' ')[0];
-    // SOUND[i].play();
-    $('.' + color).addClass('flash');
-    
-    setTimeout(() => {
-        $('.' + color).removeClass('flash');
-    }, 250);
+    setInterval(() => {
+        computerSeq.forEach((element, idx) => {
+            let id = computerSeq[idx];
+            color = $('#' + id).attr('class').split(' ')[0];
+            $('.' + color).addClass('flash');
+            setTimeout(() => {
+                $('.' + color).removeClass('flash')
+            }, 700);
+        })
+    }, 700);
 }
 
 function compareSequence() {
+    console.log(playerSeq);
+    console.log(computerSeq);
     if (computerSeq.toString() === playerSeq.toString()) {
         score++;
         $('span').textContent = score;
+        console.log("hitting if statement in compare sequence")
+        playerSeq = [];
+        render();
     } else {
        // game over
 
     }
 }
-
-
-
-
-
 
 function blueClicked (e) {
     console.log(e.target)
@@ -85,7 +80,8 @@ function blueClicked (e) {
     $('#1').addClass('flash');
     setTimeout(() => {
         $('#1').removeClass('flash');
-    }, 250);
+        if( computerSeq.length === playerSeq.length) compareSequence();
+    }, 700);
 }
 
 function greenClicked (e) {
@@ -94,16 +90,18 @@ function greenClicked (e) {
     $('#2').addClass('flash');
     setTimeout(() => {
         $('#2').removeClass('flash');
-    }, 250);  
-
+        if( computerSeq.length === playerSeq.length) compareSequence();
+    }, 700);  
 }
+
 function yellowClicked (e) {
     console.log(e.target)
     playerSeq.push(3);
     $('#3').addClass('flash');
     setTimeout(() => {
         $('#3').removeClass('flash');
-    }, 250);
+        if( computerSeq.length === playerSeq.length) compareSequence();
+    }, 700);
 
 }
 function redClicked (e) {
@@ -112,7 +110,7 @@ function redClicked (e) {
     $('#4').addClass('flash');
     setTimeout(() => {
         $('#4').removeClass('flash');
-    }, 250);
-
+        if( computerSeq.length === playerSeq.length) compareSequence();
+    }, 700);
 }
 
