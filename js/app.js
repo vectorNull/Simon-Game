@@ -10,23 +10,23 @@ const SOUND = [
 /*----- app's state (variables) -----*/
 let playerSeq = [];
 let computerSeq = [];
-let gameOver, score, color, msg;
+let gameOver, score, currentscore, msg;
 
 /*----- cached element references -----*/
-document.querySelector('.padElements')     .addEventListener('click', btnClicked);
-// document.querySelector('.green')    .addEventListener('click', greenClicked);
-// document.querySelector('.yellow')   .addEventListener('click', yellowClicked);
-// document.querySelector('.red')      .addEventListener('click', redClicked);
+displayScore = $('span');
+
 
 /*----- event listeners -----*/
-document.querySelector('#startBtn') .addEventListener('click', init);
-document.querySelector('#resetBtn') .addEventListener('click', init);
+document.querySelector('#startBtn').addEventListener('click', init);
+document.querySelector('#resetBtn').addEventListener('click', init);
+document.querySelector('.padElements').addEventListener('click', btnClicked);
 
 /*----- functions -----*/
 
 function init() {
     gameOver = false;
     score = 0;
+    currentscore = 0;
     playerSeq = [];
     computerSeq = [];
     render();
@@ -35,45 +35,44 @@ function init() {
 function render() {
     getComputerSequence();
     displayCompSequence();
-    // compareSequence();
+    compareSequence();
 }
 
 
-function getComputerSequence () {
+function getComputerSequence() {
     let randomNum = Math.floor(Math.random() * 4) + 1;
     computerSeq.push(randomNum);
 }
 
-function displayCompSequence () {
-    setInterval(() => {
-        computerSeq.forEach((element, idx) => {
-            let id = computerSeq[idx];
-            color = $('#' + id).attr('class').split(' ')[0];
-            console.log(color);
-            $('.' + color).addClass('flash');
-            setTimeout(() => {
-                $('.' + color).removeClass('flash')
-            }, 700);
-        })
-    }, 700);
+function displayCompSequence() {
+    let idx = 0;
+    const timer = setInterval(() => {
+        const id = computerSeq[idx];
+        $('#' + id).addClass('flash');
+        setTimeout(() => {
+            $('#' + id).removeClass('flash')
+        }, 700);
+        idx = ++idx;
+        if (idx >= computerSeq.length) {
+            clearInterval(timer);
+        }
+    }, 1000);
+
 }
 
 function compareSequence() {
-    console.log(playerSeq);
-    console.log(computerSeq);
     if (computerSeq.toString() === playerSeq.toString()) {
-        score++;
-        $('span').textContent = score;
-        console.log("hitting if statement in compare sequence")
+        currentscore = ++score;
+        displayScore.textContent = currentscore;
         playerSeq = [];
         render();
     } else {
-       // game over
+        
 
     }
 }
 
-function btnClicked (e) {
+function btnClicked(e) {
     if (e.target.id === '') {
         return;
     }
@@ -82,47 +81,6 @@ function btnClicked (e) {
     $('#' + id).addClass('flash');
     setTimeout(() => {
         $('#' + id).removeClass('flash');
-        if( computerSeq.length === playerSeq.length) compareSequence();
+        if (computerSeq.length === playerSeq.length) compareSequence();
     }, 700);
 }
-
-// function blueClicked (e) {
-//     console.log(e.target)
-//     playerSeq.push(1);
-//     $('#1').addClass('flash');
-//     setTimeout(() => {
-//         $('#1').removeClass('flash');
-//         if( computerSeq.length === playerSeq.length) compareSequence();
-//     }, 700);
-// }
-
-// function greenClicked (e) {
-//     console.log(e.target)
-//     playerSeq.push(2);
-//     $('#2').addClass('flash');
-//     setTimeout(() => {
-//         $('#2').removeClass('flash');
-//         if( computerSeq.length === playerSeq.length) compareSequence();
-//     }, 700);  
-// }
-
-// function yellowClicked (e) {
-//     console.log(e.target)
-//     playerSeq.push(3);
-//     $('#3').addClass('flash');
-//     setTimeout(() => {
-//         $('#3').removeClass('flash');
-//         if( computerSeq.length === playerSeq.length) compareSequence();
-//     }, 700);
-
-// }
-// function redClicked (e) {
-//     console.log(e.target)
-//     playerSeq.push(4);
-//     $('#4').addClass('flash');
-//     setTimeout(() => {
-//         $('#4').removeClass('flash');
-//         if( computerSeq.length === playerSeq.length) compareSequence();
-//     }, 700);
-// }
-
