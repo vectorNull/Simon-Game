@@ -13,20 +13,22 @@ let computerSeq = [];
 let gameOver, score, color, msg;
 
 /*----- cached element references -----*/
-document.querySelector('.blue')     .addEventListener('click', blueClicked);
-document.querySelector('.green')    .addEventListener('click', greenClicked);
-document.querySelector('.yellow')   .addEventListener('click', yellowClicked);
-document.querySelector('.red')      .addEventListener('click', redClicked);
+document.querySelector('.padElements')     .addEventListener('click', btnClicked);
+// document.querySelector('.green')    .addEventListener('click', greenClicked);
+// document.querySelector('.yellow')   .addEventListener('click', yellowClicked);
+// document.querySelector('.red')      .addEventListener('click', redClicked);
 
 /*----- event listeners -----*/
 document.querySelector('#startBtn') .addEventListener('click', init);
-document.querySelector('#resetBtn') .addEventListener('click', resetBtnClicked);
+document.querySelector('#resetBtn') .addEventListener('click', init);
 
 /*----- functions -----*/
 
 function init() {
     gameOver = false;
     score = 0;
+    playerSeq = [];
+    computerSeq = [];
     render();
 }
 
@@ -36,10 +38,6 @@ function render() {
     // compareSequence();
 }
 
-
-function resetBtnClicked (e) {
-    init();
-}
 
 function getComputerSequence () {
     let randomNum = Math.floor(Math.random() * 4) + 1;
@@ -51,6 +49,7 @@ function displayCompSequence () {
         computerSeq.forEach((element, idx) => {
             let id = computerSeq[idx];
             color = $('#' + id).attr('class').split(' ')[0];
+            console.log(color);
             $('.' + color).addClass('flash');
             setTimeout(() => {
                 $('.' + color).removeClass('flash')
@@ -74,43 +73,56 @@ function compareSequence() {
     }
 }
 
-function blueClicked (e) {
-    console.log(e.target)
-    playerSeq.push(1);
-    $('#1').addClass('flash');
+function btnClicked (e) {
+    if (e.target.id === '') {
+        return;
+    }
+    const id = e.target.id;
+    playerSeq.push(parseInt(id));
+    $('#' + id).addClass('flash');
     setTimeout(() => {
-        $('#1').removeClass('flash');
+        $('#' + id).removeClass('flash');
         if( computerSeq.length === playerSeq.length) compareSequence();
     }, 700);
 }
 
-function greenClicked (e) {
-    console.log(e.target)
-    playerSeq.push(2);
-    $('#2').addClass('flash');
-    setTimeout(() => {
-        $('#2').removeClass('flash');
-        if( computerSeq.length === playerSeq.length) compareSequence();
-    }, 700);  
-}
+// function blueClicked (e) {
+//     console.log(e.target)
+//     playerSeq.push(1);
+//     $('#1').addClass('flash');
+//     setTimeout(() => {
+//         $('#1').removeClass('flash');
+//         if( computerSeq.length === playerSeq.length) compareSequence();
+//     }, 700);
+// }
 
-function yellowClicked (e) {
-    console.log(e.target)
-    playerSeq.push(3);
-    $('#3').addClass('flash');
-    setTimeout(() => {
-        $('#3').removeClass('flash');
-        if( computerSeq.length === playerSeq.length) compareSequence();
-    }, 700);
+// function greenClicked (e) {
+//     console.log(e.target)
+//     playerSeq.push(2);
+//     $('#2').addClass('flash');
+//     setTimeout(() => {
+//         $('#2').removeClass('flash');
+//         if( computerSeq.length === playerSeq.length) compareSequence();
+//     }, 700);  
+// }
 
-}
-function redClicked (e) {
-    console.log(e.target)
-    playerSeq.push(4);
-    $('#4').addClass('flash');
-    setTimeout(() => {
-        $('#4').removeClass('flash');
-        if( computerSeq.length === playerSeq.length) compareSequence();
-    }, 700);
-}
+// function yellowClicked (e) {
+//     console.log(e.target)
+//     playerSeq.push(3);
+//     $('#3').addClass('flash');
+//     setTimeout(() => {
+//         $('#3').removeClass('flash');
+//         if( computerSeq.length === playerSeq.length) compareSequence();
+//     }, 700);
+
+// }
+// function redClicked (e) {
+//     console.log(e.target)
+//     playerSeq.push(4);
+//     $('#4').addClass('flash');
+//     setTimeout(() => {
+//         $('#4').removeClass('flash');
+//         if( computerSeq.length === playerSeq.length) compareSequence();
+//     }, 700);
+// }
 
