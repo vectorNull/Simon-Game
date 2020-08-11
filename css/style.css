@@ -85,3 +85,7 @@ main {
     border-bottom-right-radius: 300px;
     background-color: red;
 }
+
+.flash {
+    filter: brightness(600%);
+}
