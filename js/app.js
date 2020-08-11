@@ -32,17 +32,18 @@ function init() {
 }
 
 function render() {
+    init();
+    DisplayCompSequence();
     compareSequence();
-
 }
 
 function startBtnClicked (e) {
     getComputerSequence();
-    showCompSequence();
+    displayCompSequence();
 }
 
 function resetBtnClicked (e) {
-    
+    init();
 }
 
 function getComputerSequence () {
@@ -50,7 +51,7 @@ function getComputerSequence () {
     computerSeq.push(randomNum);
 }
 
-function showCompSequence () {
+function displayCompSequence () {
     let i = computerSeq.length - 1;
     
     id = computerSeq[i];
@@ -66,12 +67,16 @@ function showCompSequence () {
 function compareSequence() {
     if (computerSeq.toString() === playerSeq.toString()) {
         score++;
-        getComputerSequence();
-        showCompSequence();
+        $('span').textContent = score;
+    } else {
+       // game over
+
     }
 }
 
-init();
+
+
+
 
 
 function blueClicked (e) {
