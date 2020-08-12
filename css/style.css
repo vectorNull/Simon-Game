@@ -96,5 +96,5 @@ body {
 }
 
 .flash {
-    filter: brightness(600%);
+    opacity: 1;
 }

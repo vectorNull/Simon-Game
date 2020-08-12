@@ -51,6 +51,7 @@ function displayCompSequence() {
         playSound(id);
         setTimeout(() => {
             $('#' + id).removeClass('flash')
+            console.log(id)
         }, 700);
         idx = ++idx;
         if (idx >= computerSeq.length) {
@@ -66,7 +67,6 @@ function compareSequence() {
         playerSeq = [];
         render();
     } else {
-        playSound(gameOver);
         scoreDisplay[0].textContent = "Game Over. Try again."
     }
 }
