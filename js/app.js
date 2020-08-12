@@ -11,7 +11,7 @@ const player = new Audio()
 /*----- app's state (variables) -----*/
 let playerSeq = [];
 let computerSeq = [];
-let gameOver, score, currentscore, msg;
+let score, currentscore;
 
 /*----- cached element references -----*/
 scoreDisplay = $('#score');
