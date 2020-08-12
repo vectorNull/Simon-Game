@@ -2,15 +2,21 @@ main {
     box-sizing: border-box;
 }
 
+body {
+    background-color: rgb(24, 26, 27);
+}
+
 .jumbotron {
     background-color: rgb(131, 155, 133);
     padding: 10px;
+    margin-bottom: 0px;
 }
 
 .display-4 {
     text-align: center;
     margin: 0 auto;
     margin-bottom: 50px;
+    margin-top: 8%;
 }
 
 .nav {
@@ -27,10 +33,9 @@ main {
 }
 
 .score {
-    color: black;
+    color: white;
     margin-right: 5%;
     font-size: x-large;
-    
 }
 
 .container {
@@ -53,7 +58,6 @@ main {
     z-index: 0;
     border-radius: 310px;
     bottom: 125px;
-    
 }
 
 .pad {
@@ -72,7 +76,6 @@ main {
 }
 
 .green {
-   
     float: left;
     border-top-right-radius: 300px;
     background-color: green;
