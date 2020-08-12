@@ -1,45 +1,50 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS, jQuery-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script defer src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/style.css">
-    <script defer src="./js/app.js"></script>
-    
-    <title>The Simon Game</title>
-  </head>
-  
-  <body>
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4">The Simon Game</h1>
-        <h5 class="dedication">-- Dedicated to my son, Joseph (aka Jojo) -- </h5> 
-      </div>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS, jQuery-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script defer src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <link rel="stylesheet" href="./css/style.css">
+  <script defer src="./js/app.js"></script>
+
+  <title>The Simon Game</title>
+</head>
+
+<body>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">The Simon Game</h1>
+      <h5 class="dedication">-- Dedicated to my son, Joseph (aka Jojo) -- </h5>
     </div>
+  </div>
 
-    <ul class="nav">
-      <li class="nav-item">
-        <button type="button" class="btn btn-primary" id="startBtn">Start the game</button>
-      </li>
-      <li class="score"><span id="score">Score: 0</span></li>
-      <li class="nav-item">
-        <button type="button" class="btn btn-warning" id="resetBtn">Reset</button>
-      </li>
-    </ul>
+  <ul class="nav">
+    <li class="nav-item">
+      <button type="button" class="btn btn-primary" id="startBtn">Start the game</button>
+    </li>
+    <li class="score"><span id="score">Score: 0</span></li>
+    <li class="nav-item">
+      <button type="button" class="btn btn-warning" id="resetBtn">Reset</button>
+    </li>
+  </ul>
 
-    <div class="container boardholder">
-      <div class="padElements">
-        <div class="blue pad" id='1'></div>
-        <div class="green pad" id='2'></div>
-        <div class="yellow pad" id='3'></div>
-        <div class="red pad" id='4'></div>
-      </div>
+  <div class="container boardholder">
+    <div class="padElements">
+      <div class="blue pad" id='1'></div>
+      <div class="green pad" id='2'></div>
+      <div class="yellow pad" id='3'></div>
+      <div class="red pad" id='4'></div>
     </div>
-  
-  </body> 
+  </div>
+
+</body>
+
 </html>

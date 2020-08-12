@@ -17,9 +17,9 @@ let score, currentscore;
 scoreDisplay = $('#score');
 
 /*----- event listeners -----*/
-document.querySelector('#startBtn').addEventListener('click', init);
-document.querySelector('#resetBtn').addEventListener('click', init);
-document.querySelector('.padElements').addEventListener('click', btnClicked);
+document.querySelector('#startBtn')     .addEventListener('click', init);
+document.querySelector('#resetBtn')     .addEventListener('click', init);
+document.querySelector('.padElements')  .addEventListener('click', btnClicked);
 
 /*----- functions -----*/
 
@@ -51,7 +51,6 @@ function displayCompSequence() {
         playSound(id);
         setTimeout(() => {
             $('#' + id).removeClass('flash')
-            console.log(id)
         }, 700);
         idx = ++idx;
         if (idx >= computerSeq.length) {
