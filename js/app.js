@@ -11,7 +11,7 @@ const player = new Audio()
 /*----- app's state (variables) -----*/
 let playerSeq = [];
 let computerSeq = [];
-let gameOver, score, currentscore, msg;
+let score, currentscore;
 
 /*----- cached element references -----*/
 scoreDisplay = $('#score');
@@ -51,6 +51,7 @@ function displayCompSequence() {
         playSound(id);
         setTimeout(() => {
             $('#' + id).removeClass('flash')
+            console.log(id)
         }, 700);
         idx = ++idx;
         if (idx >= computerSeq.length) {
@@ -66,7 +67,6 @@ function compareSequence() {
         playerSeq = [];
         render();
     } else {
-        playSound(gameOver);
         scoreDisplay[0].textContent = "Game Over. Try again."
     }
 }

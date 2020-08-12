@@ -2,15 +2,21 @@ main {
     box-sizing: border-box;
 }
 
+body {
+    background-color: rgb(24, 26, 27);
+}
+
 .jumbotron {
     background-color: rgb(131, 155, 133);
     padding: 10px;
+    margin-bottom: 0px;
 }
 
 .display-4 {
     text-align: center;
     margin: 0 auto;
     margin-bottom: 50px;
+    margin-top: 8%;
 }
 
 .nav {
@@ -27,10 +33,9 @@ main {
 }
 
 .score {
-    color: black;
+    color: white;
     margin-right: 5%;
     font-size: x-large;
-    
 }
 
 .container {
@@ -41,7 +46,7 @@ main {
 }
 
 .boardholder {
-    margin-top: -3%;
+    margin-top: -5%;
 }
 
 .padElements {
@@ -53,7 +58,6 @@ main {
     z-index: 0;
     border-radius: 310px;
     bottom: 125px;
-    
 }
 
 .pad {
@@ -68,30 +72,29 @@ main {
 
 .blue {
     border-top-left-radius: 300px;
-    background-color: blue;
+    background-color: rgb(85, 85, 219);
 }
 
 .green {
-   
     float: left;
     border-top-right-radius: 300px;
-    background-color: green;
+    background-color: rgb(49, 179, 49);
     clear: right;
 }
 
 .yellow {
     float: left;
     border-bottom-left-radius: 300px;
-    background-color: yellow;
+    background-color: rgb(240, 240, 54);
     clear: left;
 }
 
 .red {
     float: left;
     border-bottom-right-radius: 300px;
-    background-color: red;
+    background-color: rgb(139, 20, 20);
 }
 
 .flash {
-    filter: brightness(600%);
+    opacity: 1;
 }
