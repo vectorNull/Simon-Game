@@ -15,7 +15,7 @@ I employed several technologies to buld this game: HTML5, CSS, Bootstrap, jQuery
  - display top players
 
 ## Instructions
-Click on **start** to begin. The computer will begin a random sequence with a corresponding tone. The goal is to mimic the sequence. When the game ends you will see a message that says **game over**. Press **reset* to try again.
+Click on **start** to begin. The computer will begin a random sequence with a corresponding tone. The goal is to mimic the sequence. When the game ends you will see a message that says **game over**. Press **reset** to try again.
 
 Play the game [here](https://vectornull.github.io/Simon-Game/)
 
