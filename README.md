@@ -8,3 +8,7 @@ I employed several technologies to buld this game: HTML5, CSS, Bootstrap, and Ja
 
 Play the game [here](https://vectornull.github.io/Simon-Game/)
 
+<<<<<<< HEAD
+=======
+![Simon Game](./img/simonGame.png)
+>>>>>>> b61c450706f4b6ac78afd97165b8c396f0ea7aa4
