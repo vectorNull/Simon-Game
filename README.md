@@ -5,3 +5,5 @@ Simon, the electronic game of memory, was originally invented by Ralph H. Baer a
 
 ## Tech Used
 I employed several technologies to buld this game: HTML5, CSS, Bootstrap, and Javascript. My focus was to write my code with a Model-View-Controller software architectural pattern. By employing this "data-driven" approach I was able to more easily test the applicaton's logic as I went along. It also increased readability and my ability to debug issues as they came up. 
+
+Play the game [here](https://vectornull.github.io/Simon-Game/)
