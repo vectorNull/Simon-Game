@@ -28,6 +28,8 @@ main {
 
 .score {
     color: black;
+    margin-right: 5%;
+    font-size: x-large;
     
 }
 
@@ -36,6 +38,10 @@ main {
     width: 700px;
     margin: 0 auto;
     justify-content: center;
+}
+
+.boardholder {
+    margin-top: -3%;
 }
 
 .padElements {
