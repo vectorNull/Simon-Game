@@ -72,27 +72,27 @@ body {
 
 .blue {
     border-top-left-radius: 300px;
-    background-color: blue;
+    background-color: rgb(85, 85, 219);
 }
 
 .green {
     float: left;
     border-top-right-radius: 300px;
-    background-color: green;
+    background-color: rgb(49, 179, 49);
     clear: right;
 }
 
 .yellow {
     float: left;
     border-bottom-left-radius: 300px;
-    background-color: yellow;
+    background-color: rgb(240, 240, 54);
     clear: left;
 }
 
 .red {
     float: left;
     border-bottom-right-radius: 300px;
-    background-color: red;
+    background-color: rgb(139, 20, 20);
 }
 
 .flash {
