@@ -24,7 +24,6 @@ document.querySelector('.padElements').addEventListener('click', btnClicked);
 /*----- functions -----*/
 
 function init() {
-    gameOver = false;
     score = 0;
     currentScore = 0;
     playerSeq = [];
